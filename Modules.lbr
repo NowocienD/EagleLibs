@@ -64,7 +64,7 @@
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
@@ -271,6 +271,20 @@
 <smd name="C" x="-3" y="-1.875" dx="1" dy="0.75" layer="1"/>
 <smd name="D" x="3" y="-1.875" dx="1" dy="0.75" layer="1"/>
 </package>
+<package name="DCDC360MINI">
+<wire x1="-8" y1="6" x2="-8" y2="-6" width="0.127" layer="21"/>
+<wire x1="-8" y1="-6" x2="8" y2="-6" width="0.127" layer="21"/>
+<wire x1="8" y1="-6" x2="8" y2="6" width="0.127" layer="21"/>
+<wire x1="8" y1="6" x2="-8" y2="6" width="0.127" layer="21"/>
+<pad name="GND1" x="-7.62" y="4.572" drill="0.8" diameter="2.54" shape="offset" rot="R180"/>
+<pad name="OUT" x="-7.62" y="-4.572" drill="0.8" diameter="2.54" shape="offset" rot="R180"/>
+<pad name="IN" x="7.62" y="-4.572" drill="0.8" diameter="2.54" shape="offset"/>
+<pad name="GND2" x="7.62" y="4.572" drill="0.8" diameter="2.1844" shape="offset"/>
+<wire x1="-9.636" y1="6.588" x2="-9.636" y2="-6.588" width="0.127" layer="39"/>
+<wire x1="-9.636" y1="-6.588" x2="9.636" y2="-6.588" width="0.127" layer="39"/>
+<wire x1="9.636" y1="-6.588" x2="9.636" y2="6.588" width="0.127" layer="39"/>
+<wire x1="9.636" y1="6.588" x2="-9.636" y2="6.588" width="0.127" layer="39"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="NRF24L01+" urn="urn:adsk.eagle:package:24547223/3" type="model">
@@ -333,6 +347,16 @@
 <circle x="2.54" y="0" radius="0.3302" width="0.1524" layer="94"/>
 <pin name="COM" x="-7.62" y="0" visible="pad" length="short" direction="pas"/>
 <pin name="NO" x="7.62" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+</symbol>
+<symbol name="DCDCMINI260">
+<wire x1="-7.62" y1="12.7" x2="-7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="0" x2="7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="7.62" y1="0" x2="7.62" y2="12.7" width="0.254" layer="94"/>
+<wire x1="7.62" y1="12.7" x2="-7.62" y2="12.7" width="0.254" layer="94"/>
+<pin name="GND1" x="-2.54" y="-5.08" length="middle" rot="R90"/>
+<pin name="GND2" x="2.54" y="-5.08" length="middle" rot="R90"/>
+<pin name="VOUT" x="12.7" y="10.16" length="middle" rot="R180"/>
+<pin name="VIN" x="-12.7" y="10.16" length="middle"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -401,12 +425,30 @@
 <devices>
 <device name="" package="SW_TS-1187A-B-A-B">
 <connects>
-<connect gate="G$1" pin="COM" pad="A B"/>
+<connect gate="G$1" pin="COM" pad="B"/>
 <connect gate="G$1" pin="NO" pad="C D"/>
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:24754950/2"/>
 </package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="DCDCMINI360">
+<gates>
+<gate name="G$1" symbol="DCDCMINI260" x="0" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="DCDC360MINI">
+<connects>
+<connect gate="G$1" pin="GND1" pad="GND1"/>
+<connect gate="G$1" pin="GND2" pad="GND2"/>
+<connect gate="G$1" pin="VIN" pad="IN"/>
+<connect gate="G$1" pin="VOUT" pad="OUT"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
