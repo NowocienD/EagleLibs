@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -276,10 +276,10 @@
 <wire x1="-8" y1="-6" x2="8" y2="-6" width="0.127" layer="21"/>
 <wire x1="8" y1="-6" x2="8" y2="6" width="0.127" layer="21"/>
 <wire x1="8" y1="6" x2="-8" y2="6" width="0.127" layer="21"/>
-<pad name="GND1" x="-7.62" y="4.572" drill="0.8" diameter="2.54" shape="offset" rot="R180"/>
-<pad name="OUT" x="-7.62" y="-4.572" drill="0.8" diameter="2.54" shape="offset" rot="R180"/>
-<pad name="IN" x="7.62" y="-4.572" drill="0.8" diameter="2.54" shape="offset"/>
-<pad name="GND2" x="7.62" y="4.572" drill="0.8" diameter="2.1844" shape="offset"/>
+<pad name="GND1" x="-7.62" y="4.572" drill="0.8" diameter="2.54" shape="octagon" rot="R180"/>
+<pad name="OUT" x="-7.62" y="-4.572" drill="0.8" diameter="2.54" shape="octagon" rot="R180"/>
+<pad name="IN" x="7.62" y="-4.572" drill="0.8" diameter="2.54" shape="octagon"/>
+<pad name="GND2" x="7.62" y="4.572" drill="0.8" diameter="2.1844" shape="octagon"/>
 <wire x1="-9.636" y1="6.588" x2="-9.636" y2="-6.588" width="0.127" layer="39"/>
 <wire x1="-9.636" y1="-6.588" x2="9.636" y2="-6.588" width="0.127" layer="39"/>
 <wire x1="9.636" y1="-6.588" x2="9.636" y2="6.588" width="0.127" layer="39"/>
